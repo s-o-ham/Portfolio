@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import '../node_modules/slick-carousel/slick/slick.css';
+@import "../node_modules/slick-carousel/slick/slick-theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /*font-family:"Inter",sans-serif;*/
+}
+/* Custom dot styles */
+.slick-dots li button:before {
+  color: #ffffff; /* Color of the dot (default) */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #DAA520; /* Color of the active dot */
+}
+
+
