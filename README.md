@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 # Portfolio
 =======
 # React + Vite
