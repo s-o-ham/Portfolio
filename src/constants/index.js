@@ -11,11 +11,11 @@ export const ABOUT_TEXT = `I am a dedicated and versatile Cyber Security student
 
 export const EXPERIENCES = [
   {
-    year: "2024 - Present",
-    role: "Listing soon...",
-    company: "( :",
-    description: `Listing soon...`,
-    technologies: ["Listing soon..."],
+    year: "2024",
+    role: "Complete Interview Preparation",
+    company: "GeekForGeeks",
+    description: "Completed an interview-focused SDE placement course for product and service-based companies.Gained expertise in DSA, core subjects, aptitude, reasoning, and resume building using Java Developed problem-solving skills and industry-relevant knowledge to excel in technical interviews.",
+    technologies: ["Java, Data Structures, Algorithms, SQL, Aptitude, Reasoning, Operating System, Networking, DBMS"],
   },
   
   // {
@@ -50,11 +50,20 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "Blogging Platform",
+    image: project6,
+    description:
+      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
+    technologies: ["HTML", "CSS", "React"],
+      url: "https://github.com/s-o-ham"
+  },
+  {
     title: "E-Commerce Website",
     image: project4,
     description:
       "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
     technologies: ["HTML", "CSS", "React"],
+    url: "https://github.com/s-o-ham"
   },
   {
     title: "Java Course Website",
@@ -62,6 +71,7 @@ export const PROJECTS = [
     description:
       "A zero to advanced Java course is a comprehensive training program that covers Java programming from basic concepts to advanced techniques, preparing learners for professional development.",
     technologies: ["Java","DSA"],
+    url: "https://github.com/s-o-ham/Java"
   },
   {
     title: "Currency Converter",
@@ -69,6 +79,7 @@ export const PROJECTS = [
     description:
       "A software which allows users to convert currency based on current exchange rates",
     technologies: ["HTML", "CSS", "Java"],
+    url: "https://github.com/s-o-ham/Currency-Converter"
   },
   {
     title: "Keylogger",
@@ -76,6 +87,7 @@ export const PROJECTS = [
     description:
       "A keylogger is a type of surveillance software or hardware that records keystrokes on a computer or mobile device, often used to monitor user activity covertly.",
     technologies: ["Python","Android-Studio"],
+    url: "https://github.com/s-o-ham/Keylogger"
   },
   {
     title: "Portfolio Website",
@@ -83,13 +95,7 @@ export const PROJECTS = [
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "CSS", "React", "Framer-Motion"],
-  },
-  {
-    title: "Blogging Platform",
-    image: project6,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "React"],
+    url: "https://github.com/s-o-ham/Portfolio"
   },
 ];
 

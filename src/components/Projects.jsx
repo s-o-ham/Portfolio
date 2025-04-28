@@ -12,7 +12,11 @@ const settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 1,
+  autoplay: true,            // <-- this line added
+  autoplaySpeed: 3000,       // <-- slide every 3 seconds
+  pauseOnHover: true,         // <-- optional: pause when mouse hovers
+  cssEase: "linear"
 };
 const Projects = () => {
 return (
@@ -28,7 +32,7 @@ return (
          whileInView={{opacity:1,x:0}}
          initial={{ opacity: 0 ,x:-100}}
          transition={{duration:1}}
-         className='text-center my-8 mx-8'>There is no better way to understand my work than through my projects.As you browse through this site, take a moment to explore my projects and see how they reflect my dedication to cyber security and technology.Each project showcases my skills and unique approach, giving you a glimpse into my signature touch in the field.</motion.p>
+         className='text-center my-8 mx-8'>There is no better way to understand my work than through my projects.As you browse through this site, take a moment to explore my projects and see how they reflect my dedication to cyber security and technology. Each project showcases my skills and unique approach, giving you a glimpse into my signature touch in the field.</motion.p>
     </div>
     <div className="border-b border-neutral-900 pb-16 w-full max-w-2xl mx-auto">
     <Slider {...settings}>
@@ -58,33 +62,50 @@ return (
       </div>
     </Slider>
     </div>
-    <div>
-      {PROJECTS.map((project,index)=>(
-        <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-          <motion.div 
-          whileInView={{opacity:1,x:0}}
-          initial={{ opacity: 0 ,x:-100}}
-          transition={{duration:1}}
-          className="w-full lg:w-1/4">
-          <img src={project.image} width={150} height={150} className='mb-6 rounded' alt={project.title} />
-          </motion.div>
-          <motion.div 
-          whileInView={{opacity:1,x:0}}
-          initial={{ opacity: 0 ,x:100}}
-          transition={{duration:1}}
-          className="w-full max-w-xl lg:w-3/4">
-            <h6 className='mb-2 font-semibold'>{project.title}</h6>
-            <p className='mb-4 text-neutral-400'>{project.description}</p>
-            {project.technologies.map((tech, index)=>(
-              <span key={index} className='mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-yellow-700'>
-                {tech}
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      ))}
+   
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {PROJECTS.map((project, index) => (
+    <motion.div 
+      key={index} 
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.5 }}
+      className="relative group bg-neutral-900 rounded-2xl p-6 hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+    >
+      <img 
+        src={project.image} 
+        alt={project.title} 
+        className="w-full h-40 object-cover rounded-xl mb-4"
+      />
       
-    </div>
+      {/* Overlay View Button */}
+      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 ease-in-out rounded-2xl">
+      {project.url && (
+    <a href={project.url} target="_blank" rel="noopener noreferrer">
+        <button className="bg-white text-black py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+          View
+        </button>
+        </a>
+      )}
+      </div>
+
+      <h6 className="mb-2 text-lg font-semibold">{project.title}</h6>
+      <p className="mb-4 text-neutral-400">{project.description}</p>
+      <div className="flex flex-wrap gap-2">
+        {project.technologies.map((tech, techIndex) => (
+          <span 
+            key={techIndex} 
+            className="bg-yellow-700 text-black px-3 py-1 rounded-full text-xs"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </motion.div>
+  ))}
+</div>
+
+
     
 
 
